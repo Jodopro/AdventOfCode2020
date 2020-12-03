@@ -18,3 +18,7 @@ find_triple' x (y:ys) = (find_triple'' x y ys) ++ find_triple' x ys
 
 find_triple [] = []
 find_triple (x:xs) = (find_triple' x xs) ++ find_triple xs
+
+part1 = find_combo numbers
+
+part2 = find_triple numbers

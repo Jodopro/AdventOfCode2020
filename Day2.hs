@@ -16,3 +16,7 @@ isCorrect2 (pos1,pos2,c,s) = (b1 && (not b2)) || (b2 && (not b1))
 countIncorrect2 [] = 0
 countIncorrect2 (x:xs) | isCorrect2 x = 1 + countIncorrect2 xs
                        | otherwise   = countIncorrect2 xs
+
+part1 = countIncorrect passwords
+
+part2 = countIncorrect2 passwords

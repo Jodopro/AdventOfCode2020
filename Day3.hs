@@ -7,4 +7,6 @@ getTrees2 index slope [] = 0
 getTrees2 index slope (x:[]) = 0
 getTrees2 index slope (x:y:xs) = (x !! index) + getTrees2 (mod (index + slope) 31) slope xs
 
-getSumTrees = (getTrees 0 1 input) * (getTrees 0 3 input) * (getTrees 0 5 input) * (getTrees 0 7 input) * (getTrees2 0 1 input)
+part1 = getTrees 0 3 input
+
+part2 = (getTrees 0 1 input) * (getTrees 0 3 input) * (getTrees 0 5 input) * (getTrees 0 7 input) * (getTrees2 0 1 input)
