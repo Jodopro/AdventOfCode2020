@@ -4,9 +4,6 @@ easyReplace '\n' = ' '
 easyReplace x = x
 
 readPassports xs = map (splitOn ":") (splitOn " " (map easyReplace xs))
-            -- where [p1,r1] = splitOn "-" xs
-            --       [r2,p4] = splitOn ": " r1
-            --       [p2,p3] = splitOn " " r2
 
 file_passwords = ((fmap readPassports) . (splitOn "\n\n")) <$> readFile("InputDay4.txt")
 
