@@ -1,11 +1,6 @@
 import Data.List.Split
 import Data.List
 
--- easyReplace '\n' = ' '
--- easyReplace x = x
-
--- readPassports xs = map (splitOn ":") (splitOn " " (map easyReplace xs))
-
 file_answers = ((fmap $ splitOn "\n") . (splitOn "\n\n")) <$> readFile("InputDay6.txt")
 
 getCount1 answers = length $ nub $ foldr (++) [] answers
