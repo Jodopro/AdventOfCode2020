@@ -12,7 +12,7 @@ getCount1 answers = length $ nub $ foldr (++) [] answers
 
 contains answers letter = fmap (elem letter) answers
 
-getCount2 (x:answers) = length $ filter (True==) (fmap (foldr (&&) True) (fmap (contains answers) x))
+getCount2 (x:answers) = length $ filter (\x -> x) $ (foldr (&&) True) <$> (contains answers) <$> x
 
 part1 = (sum . (fmap $ getCount1)) <$> file_answers
 
